@@ -12,7 +12,7 @@
                 <v-col>
                   <v-form style="width: 400px; height: 300px">
                     <div class="mx-3">
-                      <v-icon color="black" size="30px">person</v-icon>
+                      <v-icon color="black" size="30px">mdi-filter</v-icon>
                       userId
                       <div class="mx-1">
                         <v-text-field
