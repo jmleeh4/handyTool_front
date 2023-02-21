@@ -2,18 +2,21 @@
   <v-app id="app">
     <v-main>
       <v-container
-          style="position: relative; top: 20%; margin-left: 20%"
+          style="position: relative; top: 20%; margin: auto"
           class="text-xs-center"
       >
         <v-layout row wrap class="text-xs-center">
           <v-col>
-            <v-card flat class="mx-auto" max-width="800">
+            <v-card  class="mx-auto" max-width="800">
               <v-row style="margin-top: 60px">
-                <v-col>
-                  <v-form style="width: 400px; height: 300px">
+                <v-col style="margin: auto">
+                  <v-form style="width: 400px; height: 400px; margin: auto" >
                     <div class="mx-3">
-                      <v-icon color="black" size="30px">mdi-filter</v-icon>
-                      userId
+
+                      <div class="mx-1" style="text-align: left; margin-bottom: 5px">
+                        <v-icon color="black" size="30px">mdi-account</v-icon>
+                        로그인
+                      </div>
                       <div class="mx-1">
                         <v-text-field
                             placeholder="userId"
@@ -23,8 +26,6 @@
                       </div>
                     </div>
                     <div class="mx-3">
-                      <v-icon color="black" size="30px">lock</v-icon>
-                      userPassword
                       <div class="mx-1">
                         <v-text-field
                             placeholder="userPassword"
@@ -38,12 +39,19 @@
                     <v-card-actions>
                       <v-btn
                           color="#2c4f91"
-                          dark
-                          large
+                          size="x-large"
                           block
                           @click="loginSubmit"
                       >Login</v-btn
                       >
+                    </v-card-actions>
+                    <div style="color: red"></div>
+                    <v-card-actions>
+                        <v-breadcrumbs :items="items" style="margin: auto">
+                          <template v-slot:prepend>
+
+                          </template>
+                        </v-breadcrumbs>
                     </v-card-actions>
                   </v-form>
                 </v-col>
@@ -70,6 +78,18 @@ export default {
     return{
       userId : "",
       password : "",
+      items: [
+        {
+          title: '아이디 찾기',
+          disabled: false,
+          href: 'breadcrumbs_link_1',
+        },
+        {
+          title: '비밀번호 찾기',
+          disabled: false,
+          href: 'breadcrumbs_link_2',
+        },
+      ],
     }
   },
   methods : {
