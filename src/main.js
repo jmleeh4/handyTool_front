@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import router from './router/router'
 import App from './App.vue'
 
 import 'vuetify/styles'
@@ -28,4 +29,4 @@ const vuetify = createVuetify({
 
 })
 
-createApp(App).use(vuetify).mount('#app')
+createApp(App).use(vuetify).use(router).mount('#app')

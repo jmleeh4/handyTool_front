@@ -11,5 +11,6 @@ module.exports = defineConfig({
         changeOrigin: true // cross origin 허용
       }
     }
-  }
+  },
+  lintOnSave : false,
 })
