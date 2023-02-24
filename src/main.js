@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import router from './router/router'
+import axios from "axios";
 import App from './App.vue'
+
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
@@ -13,6 +15,7 @@ import { fa } from "vuetify/lib/iconsets/fa";
 
 import "@mdi/font/css/materialdesignicons.css";
 import "@fortawesome/fontawesome-free/css/all.css";
+
 
 
 const vuetify = createVuetify({
@@ -29,4 +32,4 @@ const vuetify = createVuetify({
 
 })
 
-createApp(App).use(vuetify).use(router).mount('#app')
+createApp(App).use(vuetify).use(router).use(axios).mount('#app')
