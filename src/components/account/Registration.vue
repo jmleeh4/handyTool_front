@@ -40,21 +40,13 @@
                   </div>
 
                   <v-card-actions>
-                    <v-btn
+<!--                    <v-btn
                         color="#2c4f91"
                         size="x-large"
                         block
                         @click="loginSubmit"
                     >Login</v-btn
-                    >
-                  </v-card-actions>
-                  <div style="color: red"></div>
-                  <v-card-actions>
-                    <v-breadcrumbs :items="items" style="margin: auto">
-                      <template v-slot:prepend>
-
-                      </template>
-                    </v-breadcrumbs>
+                    >-->
                   </v-card-actions>
                 </v-form>
               </v-col>
@@ -67,7 +59,8 @@
 </template>
 
 <script>
-import axios from "axios";
+
+import axios from 'axios'
 
 export default {
   name: "Registration",
@@ -81,13 +74,12 @@ export default {
             return trimValue.length > 7 || '아이디는 7자리 이상입니다';
           },
           value => {
-            axios.get('idCheck',{
-              userId : this.userId
+            axios.get('/member/idCheck',{
+              userId : value
             }).then( response => {
               return response.data === 1 || '이미 존재하는 아이디입니다';
             })
-
-          }
+          },
       ],
       pwRule : [
         value => !!value || '비밀번호를 입력하세요',
@@ -106,9 +98,7 @@ export default {
 
   },
   methods : {
-    idRule(){
-      this.name.value = "";
-    }
+
   }
 }
 </script>

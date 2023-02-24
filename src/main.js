@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import router from './router/router'
-import axios from "axios";
 import App from './App.vue'
 
 
@@ -32,4 +31,4 @@ const vuetify = createVuetify({
 
 })
 
-createApp(App).use(vuetify).use(router).use(axios).mount('#app')
+createApp(App).use(vuetify).use(router).mount('#app')
