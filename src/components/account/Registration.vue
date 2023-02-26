@@ -74,9 +74,15 @@ export default {
             return trimValue.length > 7 || '아이디는 7자리 이상입니다';
           },
           value => {
-            axios.get(`/member/idCheck?userId=${value}`
+            axios.get(`/member/idCheck`,{
+                  params : {
+                    userId : value
+                  }
+                }
             ).then( response => {
               return response.data === 1 || '이미 존재하는 아이디입니다';
+            }).catch( error => {
+              console.log(error);
             })
           },
       ],
