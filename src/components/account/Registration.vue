@@ -80,7 +80,7 @@ export default {
                   }
                 }
             ).then( response => {
-              return response.data === 1 || '이미 존재하는 아이디입니다';
+              return response.data > 0 || '이미 존재하는 아이디입니다';
             }).catch( error => {
               console.log(error);
             })
