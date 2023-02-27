@@ -22,6 +22,7 @@
                           :rules    ="idRule"
                           label     ="Name"
                           maxLength = 15
+
                       ></v-text-field>
                     </div>
                   </div>
@@ -58,54 +59,9 @@
   </v-main>
 </template>
 
-<script>
+<script src="../account/js/Registration_min.js">
 
-import axios from 'axios'
 
-export default {
-  name: "Registration",
-  data(){
-    return {
-      idRule : [
-          value => !!value || '아이디를 입력해주세요.',
-          value => {
-            const trimValue = value.replace(/(\s*)/g, '');
-            // const pattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/
-            return trimValue.length > 7 || '아이디는 7자리 이상입니다';
-          },
-          value => {
-            axios.get(`/member/idCheck`,{
-                  params : {
-                    userId : value
-                  }
-                }
-            ).then( response => {
-              return response.data > 0 || '이미 존재하는 아이디입니다';
-            }).catch( error => {
-              console.log(error);
-            })
-          },
-      ],
-      pwRule : [
-        value => !!value || '비밀번호를 입력하세요',
-        value => {
-          const trimValue = value.replace(/(\s*)/g, '');
-          return trimValue.length > 10 || '비밀번호는 10자리 이상입니다';
-        },
-      ],
-
-      userId    : "",
-      password  : "",
-
-    }
-  },
-  created() {
-
-  },
-  methods : {
-
-  }
-}
 </script>
 
 <style scoped>

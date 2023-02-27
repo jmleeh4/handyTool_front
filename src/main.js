@@ -14,6 +14,7 @@ import { fa } from "vuetify/lib/iconsets/fa";
 
 import "@mdi/font/css/materialdesignicons.css";
 import "@fortawesome/fontawesome-free/css/all.css";
+import axios from "axios";
 
 
 
@@ -30,5 +31,12 @@ const vuetify = createVuetify({
     directives,
 
 })
-
-createApp(App).use(vuetify).use(router).mount('#app')
+const app = createApp(App);
+/*axios 전역변수로 등록*/
+app.config.globalProperties.axios = axios;
+/*vuetify 적용*/
+app.use(vuetify)
+/*router 전역 사용*/
+app.use(router)
+/*Mount*/
+app.mount('#app')

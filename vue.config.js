@@ -1,4 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
+const axios = require("axios");
 module.exports = defineConfig({
   transpileDependencies: true,
   outputDir: "../src/main/resources/static",  // 빌드 타겟 디렉토리
