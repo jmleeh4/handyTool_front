@@ -22,6 +22,7 @@ export default {
                     return data == 0 || '이미 존재하는 아이디입니다';
                 },
             ],
+
             pwRule : [
                 value => !!value || '비밀번호를 입력하세요',
                 value => {
