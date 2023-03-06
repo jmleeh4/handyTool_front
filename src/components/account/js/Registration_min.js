@@ -16,7 +16,6 @@ export default {
                                 userId : value
                             }
                         }
-
                     ).catch( error => {
                         console.log(error);
                     })
