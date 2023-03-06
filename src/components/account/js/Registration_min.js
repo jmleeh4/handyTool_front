@@ -27,9 +27,9 @@ export default {
                 value => !!value || '비밀번호를 입력하세요',
                 value => {
                     const trimValue = value.replace(/(\s*)/g, '');
-                    const number    = trimValue.search(/[0-9]g/);
+                    const number    = trimValue.search(/[0-9]/g);
                     const english   = trimValue.search(/[a-z]/ig);
-                    const spece     = trimValue.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+                    const spece     = trimValue.search(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g);
 
                     if(trimValue.length < 10){
                         return '비밀번호는 10자리 이상입니다';
@@ -37,6 +37,8 @@ export default {
                         return '영문, 숫자, 특수문자를 혼합하여 입력해주세요';
                     }else if(trimValue.search(/\s/) != -1){
                         return '비밀번호는 공백없이 입력해주세요';
+                    }else{
+                        return true;
                     }
                 }
             ],
