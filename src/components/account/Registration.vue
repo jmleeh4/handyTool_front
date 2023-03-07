@@ -13,7 +13,7 @@
                   <div class="mx-3">
                     <div class="mx-3 font-weight-black text-h4" style="text-align: center; margin-bottom: 70px; color: cornflowerblue">
                       <v-icon icon="mdi-home" style="margin-right: -10px"/>
-                      registration
+                      Registration
                     </div>
                     <div class="mx-1">
                       <v-text-field
@@ -59,6 +59,19 @@
                           :counter  = 20
                           maxLength = 20
                           label="Name"
+                          required
+                      ></v-text-field>
+                    </div>
+                  </div>
+                  <div class="mx-3">
+                    <div class="mx-1">
+                      <v-text-field
+                          type="email"
+                          v-model="userName"
+                          :rules="confPw"
+                          :counter  = 20
+                          maxLength = 20
+                          label="E-Mail"
                           required
                       ></v-text-field>
                     </div>
