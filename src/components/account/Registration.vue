@@ -22,7 +22,6 @@
                           :rules    ="idRule"
                           label     ="Name"
                           maxLength = 15
-
                       ></v-text-field>
                     </div>
                   </div>
@@ -35,6 +34,31 @@
                           :counter  = 20
                           maxLength = 20
                           label="Password"
+                          required
+                      ></v-text-field>
+                    </div>
+                  </div>
+                  <div class="mx-3">
+                    <div class="mx-1">
+                      <v-text-field
+                          type="password"
+                          :rules="confPw"
+                          :counter  = 20
+                          maxLength = 20
+                          label="ConfirmPassword"
+                          required
+                      ></v-text-field>
+                    </div>
+                  </div>
+                  <div class="mx-3">
+                    <div class="mx-1">
+                      <v-text-field
+                          type="text"
+                          v-model="userName"
+                          :rules="confPw"
+                          :counter  = 20
+                          maxLength = 20
+                          label="Name"
                           required
                       ></v-text-field>
                     </div>

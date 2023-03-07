@@ -42,8 +42,13 @@ export default {
                 }
             ],
 
-            userId    : "",
-            password  : "",
+            confPw : [
+                value => this.password == value || '비밀번호를 확인하세요'
+            ],
+
+            userId      : "",               //유저아이디
+            password    : "",               //비밀번호
+            userName    : "",               //유저이름
 
         }
     },
