@@ -7,7 +7,6 @@ export default {
                 value => !!value || '아이디를 입력해주세요.',
                 value => {
                     const trimValue = value.replace(/(\s*)/g, '');
-                    // const pattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/
                     return trimValue.length > 7 || '아이디는 7자리 이상입니다';
                 },
                 async value => {
