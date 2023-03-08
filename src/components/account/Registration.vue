@@ -15,7 +15,6 @@
                       <v-icon icon="mdi-home" style="margin-right: -10px"/>
                       Registration
                     </div>
-
                     <div class="mx-1">
                       <v-text-field
                           v-model   ="userId"
@@ -68,10 +67,10 @@
                     <div class="mx-1">
                       <v-text-field
                           type="email"
-                          v-model="userName"
+                          v-model="email"
                           :rules="confPw"
-                          :counter  = 20
-                          maxLength = 20
+                          :counter  = 30
+                          maxLength = 30
                           label="E-Mail"
                           required
                       ></v-text-field>

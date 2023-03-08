@@ -49,6 +49,7 @@ export default {
             userId      : "",               //유저아이디
             password    : "",               //비밀번호
             userName    : "",               //유저이름
+            email       : "",               //이메일
 
         }
     },
