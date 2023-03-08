@@ -68,10 +68,10 @@
                       <v-text-field
                           type="email"
                           v-model="email"
-                          :rules="confPw"
+                          :rules="emailRule"
                           :counter  = 30
                           maxLength = 30
-                          label="E-Mail"
+                          label="Email Address"
                           required
                       ></v-text-field>
                     </div>
