@@ -76,6 +76,28 @@
                       ></v-text-field>
                     </div>
                   </div>
+                  <div class="mx-3">
+                    <div class="mx-1">
+                      <v-text-field
+                          type="email"
+                          v-model="email"
+                          :rules="emailRule"
+                          :counter  = 30
+                          maxLength = 30
+                          label="Email Address"
+                          required
+                      ></v-text-field>
+                      <v-text-field
+                          type="email"
+                          v-model="email"
+                          :rules="emailRule"
+                          :counter  = 30
+                          maxLength = 30
+                          label="Email Address"
+                          required
+                      ></v-text-field>
+                    </div>
+                  </div>
 
                   <v-card-actions>
 <!--                    <v-btn
