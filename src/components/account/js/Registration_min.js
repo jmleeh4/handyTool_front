@@ -38,6 +38,7 @@ export default {
                         return '비밀번호는 공백없이 입력해주세요';
                     }else{
                         return true;
+
                     }
                 }
             ],
