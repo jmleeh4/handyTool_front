@@ -42,6 +42,7 @@ export default {
                     }
                 }
             ],
+
             //이메일 룰
             emailRule : [
                 value => {
