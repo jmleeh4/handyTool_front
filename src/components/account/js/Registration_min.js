@@ -49,10 +49,7 @@ export default {
                     console.log(regExp);
                     return value.match(regExp) || "잘못된 이메일 형식입니다";
 
-                    //취해도커밋
-                    //아 커밋해야해?
-                    //어우 취해
-                    //그래도 커밋은 꼭 하자
+
                 }
             ],
 
