@@ -32,6 +32,10 @@
   </div>
 </template>
 
+<keep-alive>
+  <HelloWorld></HelloWorld>
+</keep-alive>
+
 <script>
 export default {
   name: 'HelloWorld',

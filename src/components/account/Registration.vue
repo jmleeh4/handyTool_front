@@ -55,9 +55,9 @@
                       <v-text-field
                           type="text"
                           v-model="userName"
-                          :rules="confPw"
-                          :counter  = 20
-                          maxLength = 20
+                          :rules="nameRule"
+                          :counter  = 4
+                          maxLength = 4
                           label="Name"
                           required
                       ></v-text-field>
@@ -76,39 +76,38 @@
                       ></v-text-field>
                     </div>
                   </div>
-
                   <div class="mx-3">
                     <div class="mx-1">
-                      <v-text-field
-                          type="email"
-                          v-model="email"
-                          :rules="emailRule"
-                          :counter  = 30
-                          maxLength = 30
-                          label="Email Address"
-                          required
-                      ></v-text-field>
-                      <v-text-field
-                          type="email"
-                          v-model="email"
-                          :rules="emailRule"
-                          :counter  = 30
-                          maxLength = 30
-                          label="Email Address"
-                          required
-                      ></v-text-field>
+
+                      <v-menu
+                          ref="menu"
+                          v-model="menu"
+                          :close-on-content-click="false"
+                          :nudge-right="40"
+                          :return-value.sync="birthday"
+                          transition="scale-transition"
+                          offset-y
+                          min-width="auto"
+                      >
+                        <template v-slot:activator="{ on }">
+                          <v-text-field
+                              v-model="birthday"
+                              label="생년월일"
+                              readonly
+                              v-on="on"
+                              :rules="dobRules"
+                          ></v-text-field>
+                        </template>
+                        <v-date-picker
+                            v-model="birthday"
+                            no-title
+                            scrollable
+                            @input="$refs.menu.save(birthday)"
+                        ></v-date-picker>
+                      </v-menu>
+
                     </div>
                   </div>
-
-                  <v-card-actions>
-<!--                    <v-btn
-                        color="#2c4f91"
-                        size="x-large"
-                        block
-                        @click="loginSubmit"
-                    >Login</v-btn
-                    >-->
-                  </v-card-actions>
                 </v-form>
               </v-col>
             </v-row>

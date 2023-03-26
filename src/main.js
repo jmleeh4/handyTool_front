@@ -5,8 +5,10 @@ import App from './App.vue'
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
+//import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import Registration from './components/account/Registration'
+import { VDatePickerTitle } from 'vuetify/lib/components/VDatePicker/VDatePickerTitle';
 
 
 import { mdi, aliases } from 'vuetify/lib/iconsets/mdi'
@@ -26,7 +28,9 @@ const vuetify = createVuetify({
             fa,
         },
     },
-    components,
+    components : {
+        VDatePickerTitle
+    },
     directives,
 
 })
@@ -37,5 +41,7 @@ app.config.globalProperties.axios = axios;
 app.use(vuetify)
 /*router 전역 사용*/
 app.use(router)
+
+app.component('Registration', {Registration})
 /*Mount*/
 app.mount('#app')

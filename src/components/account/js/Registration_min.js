@@ -46,15 +46,22 @@ export default {
             emailRule : [
                 value => {
                     const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
-                    console.log(regExp);
-                    return value.match(regExp) || "잘못된 이메일 형식입니다";
-                    //아 귀찮
-
+                    return regExp.test(value) || "잘못된 이메일 형식입니다";
                 }
             ],
-
+            //네임 룰
+            nameRule : [
+                value => {
+                    const reg = /^[가-힣]{2,4}$/;
+                    return reg.test(value) || "한글 2~4자 이내";
+                }
+            ],
             confPw : [
                 value => this.password == value || '비밀번호를 확인하세요'
+            ],
+
+            dobRules: [
+                v => !!v || '생년월일을 입력해주세요',
             ],
 
             userId      : "",               //유저아이디
@@ -62,8 +69,14 @@ export default {
             userName    : "",               //유저이름
             email       : "",               //이메일
             birthday    : "",               //생일
+            menu        : false
 
         }
     },
+    methods : {
+        save(birthday) {
+            console.log(birthday);
+        }
+    }
 
 }
